@@ -8,6 +8,7 @@ public class ObjectRepo {
     public static By SearchIconSelection = By.xpath("// button[contains(@type,'button')]");
     public static By searchField = By.xpath("// input[contains(@id,'txt_search_query')]");
     public static By SelectSearchField = By.xpath("// button[contains(@id,'btn_global_search')]");
+    public static By SelectSecondLink = By.xpath("//a[contains(@href,'nagwa.com/en/lessons')]");
 
 
 }

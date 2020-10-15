@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static Utilities.ObjectRepo.searchField;
 
 public class HomePage {
@@ -40,5 +42,10 @@ public class HomePage {
     public void selectSearchField() {
         driver.findElement(searchField).sendKeys(Keys.ENTER);
 
+    }
+    public void selectSecondOption() {
+
+        List<WebElement> li = driver.findElements(ObjectRepo.SelectSecondLink);;
+        li.get(1).click();
     }
 }
