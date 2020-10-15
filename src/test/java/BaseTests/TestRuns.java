@@ -32,8 +32,10 @@ public class TestRuns {
         driver.get(propertiesConfig.getProperty("navigateUrl"));
     }
 
-
-
+    @Test(priority = 1)
+    public void successfulTest() {
+        homePage.selectEnglishLang();
+    }
     @AfterClass
     public void afterClass() {
         driver.quit();
