@@ -35,9 +35,7 @@ public class TestRuns {
     @Test(priority = 1)
     public void successfulTest() {
         homePage.selectEnglishLang();
+        homePage.selectSearchIcon();
     }
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
+
 }

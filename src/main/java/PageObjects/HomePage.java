@@ -15,11 +15,18 @@ public class HomePage {
         this.driver = driver;
         wait = new WebDriverWait(this.driver, 30);
     }
-    //access to SelectSizeLocator
+    //access to SelectEnglishLanguage
 
     public void selectEnglishLang() {
         wait.until(ExpectedConditions.elementToBeClickable(ObjectRepo.EnglishBTNSelection));
         WebElement selectEngBTN = driver.findElement(ObjectRepo.EnglishBTNSelection);
         selectEngBTN.click();
+    }
+    //access to SelectSearchIcon
+
+    public void selectSearchIcon() {
+        wait.until(ExpectedConditions.elementToBeClickable(ObjectRepo.SearchIconSelection));
+        WebElement selectSearchBTN = driver.findElement(ObjectRepo.SearchIconSelection);
+        selectSearchBTN.click();
     }
 }
