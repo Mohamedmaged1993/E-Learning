@@ -36,6 +36,8 @@ public class TestRuns {
     public void successfulTest() {
         homePage.selectEnglishLang();
         homePage.selectSearchIcon();
+        homePage.fillSearchData(propertiesConfig.getProperty("validSearchInput"));
+        homePage.selectSearchField();
     }
 
 }

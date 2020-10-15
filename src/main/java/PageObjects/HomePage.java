@@ -1,10 +1,13 @@
 package PageObjects;
 
 import Utilities.ObjectRepo;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static Utilities.ObjectRepo.searchField;
 
 public class HomePage {
     WebDriver driver;
@@ -28,5 +31,14 @@ public class HomePage {
         wait.until(ExpectedConditions.elementToBeClickable(ObjectRepo.SearchIconSelection));
         WebElement selectSearchBTN = driver.findElement(ObjectRepo.SearchIconSelection);
         selectSearchBTN.click();
+    }
+
+    public void fillSearchData(String name) {
+        driver.findElement(searchField).sendKeys(name);
+
+    }
+    public void selectSearchField() {
+        driver.findElement(searchField).sendKeys(Keys.ENTER);
+
     }
 }
