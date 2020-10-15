@@ -48,4 +48,15 @@ public class HomePage {
         List<WebElement> li = driver.findElements(ObjectRepo.SelectSecondLink);;
         li.get(1).click();
     }
+
+    public void previewClickBTN() {
+        wait.until(ExpectedConditions.elementToBeClickable(ObjectRepo.PreviewClickBtn));
+        WebElement clickPreviewhBTN = driver.findElement(ObjectRepo.PreviewClickBtn);
+        clickPreviewhBTN.click();
+    }
+    public void countsQuestions() {
+        List<WebElement> totalLinks = driver.findElements(ObjectRepo.CountQuestionsNo);
+        int totalQuestions = totalLinks.size();
+        System.out.println("Total NO.OF QUESTIONS : " + totalQuestions);
+    }
 }

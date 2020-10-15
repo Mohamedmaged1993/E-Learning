@@ -39,6 +39,8 @@ public class TestRuns {
         homePage.fillSearchData(propertiesConfig.getProperty("validSearchInput"));
         homePage.selectSearchField();
         homePage.selectSecondOption();
+        homePage.previewClickBTN();
+        homePage.countsQuestions();
     }
 
 }
