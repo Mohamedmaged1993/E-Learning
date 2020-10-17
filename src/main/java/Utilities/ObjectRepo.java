@@ -12,3 +12,6 @@ public class ObjectRepo {
     public static By PreviewClickBtn = By.xpath("//a[contains(@class,'btn btn-orange btn-outline')]");
     public static By CountQuestionsNo = By.xpath("//div[contains(@class,'one-part-question')]");
 }
+
+
+

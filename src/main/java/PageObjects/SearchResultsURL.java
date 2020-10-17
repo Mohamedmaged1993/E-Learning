@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Utilities.ObjectRepo;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,11 +20,9 @@ public class SearchResultsURL {
     }
 
     //create method to select second option
-    public void selectSecondOption() {
-
+    public void selectSecondOption(int i) {
         List<WebElement> li = driver.findElements(ObjectRepo.SelectSecondLink);
-        ;
-        li.get(1).click();
+        li.get(i).click();
     }
 
     //access to click PreviewBTN

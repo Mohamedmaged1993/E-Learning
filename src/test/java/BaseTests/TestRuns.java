@@ -45,9 +45,12 @@ public class TestRuns {
         englishHomePage.selectSearchIcon();
         englishHomePage.fillSearchData(propertiesConfig.getProperty("validSearchInput"));
         englishHomePage.selectSearchField();
-        searchResultsURL.selectSecondOption();
+        searchResultsURL.selectSecondOption(1);
         searchResultsURL.previewClickBTN();
         searchResultsURL.countsQuestions();
     }
-
+    @AfterClass
+    public void afterClass() {
+        driver.quit();
+    }
 }
