@@ -1,6 +1,8 @@
 package BaseTests;
 
+import PageObjects.EnglishHomePage;
 import PageObjects.HomePage;
+import PageObjects.SearchResultsURL;
 import Utilities.ObjectRepo;
 import Utilities.PropertiesConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -12,12 +14,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
 public class TestRuns {
 
 
     WebDriver driver;
     WebDriverWait wait;
     HomePage homePage;
+    EnglishHomePage englishHomePage ;
+    SearchResultsURL searchResultsURL;
     PropertiesConfig propertiesConfig;
     int timeOut = 10;
 
@@ -28,6 +33,8 @@ public class TestRuns {
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, timeOut);
         homePage = new HomePage(driver);
+        englishHomePage = new EnglishHomePage(driver);
+        searchResultsURL = new SearchResultsURL(driver);
         propertiesConfig = new PropertiesConfig();
         driver.get(propertiesConfig.getProperty("navigateUrl"));
     }
@@ -35,12 +42,12 @@ public class TestRuns {
     @Test(priority = 1)
     public void successfulTest() {
         homePage.selectEnglishLang();
-        homePage.selectSearchIcon();
-        homePage.fillSearchData(propertiesConfig.getProperty("validSearchInput"));
-        homePage.selectSearchField();
-        homePage.selectSecondOption();
-        homePage.previewClickBTN();
-        homePage.countsQuestions();
+        englishHomePage.selectSearchIcon();
+        englishHomePage.fillSearchData(propertiesConfig.getProperty("validSearchInput"));
+        englishHomePage.selectSearchField();
+        searchResultsURL.selectSecondOption();
+        searchResultsURL.previewClickBTN();
+        searchResultsURL.countsQuestions();
     }
 
 }
